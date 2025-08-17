@@ -8,7 +8,7 @@ WORKDIR /app
 # Instalar o Tesseract OCR e suas dependências
 # Usamos apt-get aqui porque estamos construindo a imagem Docker, não no ambiente de build do Render diretamente
 RUN apt-get update && \
-    apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev && \
+    apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev libgl1-mesa-glx && \
     rm -rf /var/lib/apt/lists/*
 
 # Copiar o arquivo de requisitos e instalar as dependências Python

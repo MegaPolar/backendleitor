@@ -22,6 +22,6 @@ COPY . .
 EXPOSE 5000
 
 # Comando para iniciar a aplicação Flask
-CMD ["python", "src/main.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "src.main:app"]
 
 
